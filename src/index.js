@@ -1,3 +1,5 @@
+var apiKey = "b35c686ba9565ba0ab254c2230937552";
+
 function formatDate() {
   let now = new Date();
   let date = now.getDate();
@@ -42,7 +44,7 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHTML = `<div class="row">`;
 
@@ -52,23 +54,26 @@ function displayForecast(response) {
       `<div class="card mx-auto" style="width: 10rem">
           <div class="card-body">
             <div class="detailed-weather-data">${forecastDay.dt}</div>
-            <img src="images/fog.png" width="100" />
+            <img src = "https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+            alt=""
+            width="100"
+            />         
             <div class="weather-forecast-temperatures">
-              <span class="highTemp"> $ {forecastDay.temp.max}° | </span>
-              <span class="lowTemp"> $ {forecastDay.temp.min}° </span>
+              <span class="highTemp"> ${forecastDay.temp.max}° </span>
+              <span class="lowTemp"> ${forecastDay.temp.min}° </span>
             </div>
           </div>
         </div>`;
   });
 
   forecastHTML = forecastHTML + "</div>";
-  forecastElement.innerHTMLML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "518d59b94c2f8f9c2e5d64b1ce38aa9e";
+  // let apiKey = "b35c686ba9565ba0ab254c2230937552";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -98,7 +103,7 @@ function displayWeather(response) {
 }
 
 function searchCity(city) {
-  let apiKey = "518d59b94c2f8f9c2e5d64b1ce38aa9e";
+  // let apiKey = "b35c686ba9565ba0ab254c2230937552";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
@@ -111,7 +116,7 @@ function handleSubmit(event) {
 }
 
 function searchLocation(position) {
-  let apiKey = "518d59b94c2f8f9c2e5d64b1ce38aa9e";
+  // let apiKey = "b35c686ba9565ba0ab254c2230937552";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
@@ -152,5 +157,3 @@ let currentLocationButton = document.querySelector("#location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Krakow");
-Odessa;
-Kyiv;
