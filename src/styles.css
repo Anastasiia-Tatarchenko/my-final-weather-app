@@ -58,6 +58,14 @@ h3 {
   color: #453953;
 }
 
+h4 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
 p {
   color: #453953;
   line-height: 20px;
@@ -71,28 +79,6 @@ p {
   top: -30px;
 }
 
-/*
-./location-data {
-  background: #fff;
-  padding: 20px;
-  right: 0;
-  position: fixed;
-  list-style: none;
-}
-
-./wheather {
-  background: #fff;
-  padding: 20px;
-  list-style: none;
-  position: fixed;
-  right: 50%;
-  top: 15;
-}
-
-./detailed-today-weather-data {
-  display: flex;
-}
-*/
 img {
   border: solid;
   border-radius: 50%;
