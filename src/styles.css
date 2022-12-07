@@ -4,6 +4,10 @@ body {
   background: #6643b5;
 }
 
+.active {
+  color: #d33021;
+}
+
 .card {
   background: radial-gradient(
     592px at 48.2% 50%,
@@ -67,7 +71,8 @@ p {
   top: -30px;
 }
 
-.location-data {
+/*
+./location-data {
   background: #fff;
   padding: 20px;
   right: 0;
@@ -75,7 +80,7 @@ p {
   list-style: none;
 }
 
-.wheather {
+./wheather {
   background: #fff;
   padding: 20px;
   list-style: none;
@@ -84,9 +89,10 @@ p {
   top: 15;
 }
 
-.detailed-today-weather-data {
+./detailed-today-weather-data {
   display: flex;
 }
+*/
 img {
   border: solid;
   border-radius: 50%;
@@ -128,13 +134,23 @@ img {
 }
 .highTemp {
   font-weight: bold;
-  color: #113f67;
+  color: #453953;
 }
 .lowTemp {
-  color: #37598b;
+  color: #453953;
   font-weight: bold;
 }
 
-.active {
-  color: #d33021;
+.weather-data {
+  text-align: center;
+  font-size: 18px;
+  color: #453953;
+  font-weight: bold;
+}
+
+.weather-forecast-temperatures {
+  text-align: center;
+  font-size: 20px;
+  color: #453953;
+  font-weight: bold;
 }
